@@ -1,0 +1,26 @@
+INFO:__main__:Connected with result code 0
+INFO:__main__:connected and looping
+INFO:__main__:Connected with result code 0
+INFO:__main__:connected and looping
+INFO:__main__:Connected with result code 0
+INFO:__main__:connected and looping
+INFO:__main__:Connected with result code 0
+INFO:__main__:garden/data/pump_1/ b'{"ID": "1", "state": "on"}'
+INFO:__main__:garden/data/pump_1/ b'{"ID": "1", "state": "on"}'
+INFO:__main__:connected and looping
+INFO:__main__:Connected with result code 0
+INFO:__main__:garden/data/pump_1/ b'{"ID": "1", "state": "on"}'
+INFO:__main__:connected and looping
+INFO:__main__:Connected with result code 0
+INFO:__main__:garden/data/pump_1/ b'{"ID": "1", "state": "on"}'
+INFO:__main__:{'ID': '1', 'state': 1}
+INFO:__main__:garden/data/pump_1/ b'{"ID": "1", "state": "on"}'
+INFO:__main__:{'ID': '1', 'state': 1}
+INFO:__main__:connected and looping
+INFO:__main__:Connected with result code 0
+INFO:__main__:garden/data/pump_1/ b'{"ID": "1", "state": "on"}'
+INFO:__main__:{'ID': '1', 'state': 1}
+INFO:__main__:garden/data/pump_1/ b'{"ID": "1", "state": "on"}'
+INFO:__main__:{'ID': '1', 'state': 1}
+INFO:__main__:Disconnected with result code 1
+INFO:__main__:Trying to reconnect...

@@ -1,0 +1,18 @@
+{
+    "sqlite3":
+    {
+        "dataBaseName":"WORKER",
+        "filePath" :"data/workerData.db",
+        "url":"localhost",
+        "port":8700
+    },
+    "mqtt": {
+    "host": "localhost",
+    "port": 9001,
+    "prefix": [
+      "garden"
+    ],
+    "topic":"pump/pump_1/"
+  },
+    "location": "Supplier Casing"
+}

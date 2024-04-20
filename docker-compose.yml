@@ -1,0 +1,30 @@
+version: '3.2'
+
+services:
+    dashboard:
+        extends:
+            file: ./dashboard/app.yml
+            service: dashboard
+        depends_on:
+            - DB_Backend
+            - mqtt_broker
+    mqtt_broker:
+        extends:
+            file: ./mqtt_broker/app.yml
+            service: mqtt_broker
+    db_backend:
+        extends:
+            file: ./DB_Backend/app.yml
+            service: DB_Backend
+    collects:
+        extends:
+            file: ./CollectData/app.yml
+            service: collects
+        depends_on:
+            - DB_Backend
+            - mqtt_broker
+
+networks:
+  internal:
+    name: home  
+

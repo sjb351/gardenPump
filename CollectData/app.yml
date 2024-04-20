@@ -1,0 +1,11 @@
+services:
+  collects:
+    build: .
+    privileged: true
+    working_dir: /app
+    command: "python collect.py"
+    networks:
+      internal:
+        aliases:
+          - collect.docker.local
+    restart: unless-stopped

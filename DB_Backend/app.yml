@@ -1,0 +1,12 @@
+services:
+  db_backend:
+    build: .
+    ports:
+      - "8700:8700"
+    volumes:
+      - ./data/data.db:/data/data.db
+    networks:
+      internal:
+        aliases:
+          - sqlite.docker.local
+    restart: unless-stopped
