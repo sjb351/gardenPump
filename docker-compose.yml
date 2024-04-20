@@ -6,7 +6,7 @@ services:
             file: ./dashboard/app.yml
             service: dashboard
         depends_on:
-            - DB_Backend
+            - db_backend
             - mqtt_broker
     mqtt_broker:
         extends:
@@ -15,13 +15,13 @@ services:
     db_backend:
         extends:
             file: ./DB_Backend/app.yml
-            service: DB_Backend
+            service: db_backend
     collects:
         extends:
             file: ./CollectData/app.yml
             service: collects
         depends_on:
-            - DB_Backend
+            - db_backend
             - mqtt_broker
 
 networks:

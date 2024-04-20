@@ -111,6 +111,13 @@ const handleButtonClick = async (action) => {
           <Col ></Col>
           <Col ></Col>
           <Col className="d-grid px-4" >
+            {data == null ? (
+            <Card className='text-center justify-content-center bg-warning text-white'>
+              <Card.Body className='text-center justify-content-center'>
+                  No data
+              </Card.Body>
+            </Card>
+            ):( <>
             {data.state == 1 ? (
           <Card className='text-center justify-content-center bg-success text-white'>
           <Card.Body className='text-center justify-content-center'>
@@ -118,11 +125,12 @@ const handleButtonClick = async (action) => {
           </Card.Body>
           </Card>
             ) : (
-          <Card className='text-center justify-content-center bg-Danger text-white'>
+          <Card className='text-center justify-content-center bg-danger text-white'>
           <Card.Body className='text-center justify-content-center'>
               Pump Off
           </Card.Body>
           </Card>
+            )}</>
             )}
           </Col>
           <Col ></Col>

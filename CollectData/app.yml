@@ -4,6 +4,8 @@ services:
     privileged: true
     working_dir: /app
     command: "python collect.py"
+    volumes:
+      - ./logs/:/app/logs/
     networks:
       internal:
         aliases:

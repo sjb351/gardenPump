@@ -3,13 +3,13 @@ import requests
 import logging
 import json
 # MQTT broker details
-broker = "mqtt.example.com"
+broker = "mqtt.docker.local"
 port = 1883
 topic = "garden/data/#"
 
 # API database details
-api_url_add = "http://localhost:8700/get"
-api_url_get = "http://localhost:8700/post"
+api_url_get = "http://sqlite.docker.local:8700/get"
+api_url_add = "http://sqlite.docker.local:8700/post"
 
 # Configure logging
 logging.basicConfig(filename='./logs/mqtt_client.log', level=logging.INFO)
@@ -31,20 +31,24 @@ def on_message(client, userdata, msg):
     # Assuming the payload is a JSON object
     data = msg.payload.decode()
     data = json.loads(data)
-    
-    if data["state"] == "on":
-        data["state"] = 1
-    elif data["state"] == "off":
-        data["state"] = 0
-    # data messeage reads as {"state": 1, ID : 1, .....}
-    logger.info(data)
-    print(data)
-    response = requests.post(api_url_add, json=data)
-    print(response)
-    if response.status_code == 200:
-        logger.info("Data added to API database successfully")
-    else:
-        logger.error("Failed to add data to API database")
+    try:
+        if data["state"] == "on":
+            data["state"] = 1
+        elif data["state"] == "off":
+            data["state"] = 0
+        # data messeage reads as {"state": 1, ID : 1, .....}
+        logger.info(data)
+        print(data)
+        response = requests.post(api_url_add, json=data)
+        print(response)
+        logger.info(response)
+        if response.status_code == 200:
+            logger.info("Data added to API database successfully")
+        else:
+            logger.error("Failed to add data to API database")
+    except Exception as e:
+        logger.error(e)
+        print(e)
 
 client = mqtt.Client()
 client.on_connect = on_connect
