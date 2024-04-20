@@ -3,11 +3,11 @@
     {
         "dataBaseName":"WORKER",
         "filePath" :"data/workerData.db",
-        "url":"localhost",
+        "url":"sqlite.docker.local",
         "port":8700
     },
     "mqtt": {
-    "host": "localhost",
+    "host": "mqtt.docker.local",
     "port": 9001,
     "prefix": [
       "garden"
