@@ -1,18 +1,18 @@
 {
     "sqlite3":
     {
-        "dataBaseName":"WORKER",
-        "filePath" :"data/workerData.db",
-        "url":"sqlite.docker.local",
+        "dataBaseName":"pump_1",
+        "filePath" :"data/data.db",
+        "url":null,
         "port":8700
     },
-    "mqtt": {
-    "host": "mqtt.docker.local",
-    "port": 9001,
-    "prefix": [
-      "garden"
-    ],
-    "topic":"pump/pump_1/"
+      "mqtt": {
+      "host": null,
+      "port": 9001,
+      "prefix": [
+        "garden"
+      ],
+      "topic":"pump/pump_1/"
   },
     "location": "Supplier Casing"
 }
