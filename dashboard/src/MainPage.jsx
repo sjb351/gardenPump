@@ -115,7 +115,6 @@ const handleButtonClick = async (action) => {
         
       <Row className='gx-2 gy-1 row mt-3'>
           <Col ></Col>
-          <Col ></Col>
           <Col className="d-grid px-4" >
             {data == null ? (
             <Card className='text-center justify-content-center bg-warning text-white'>
@@ -139,7 +138,7 @@ const handleButtonClick = async (action) => {
             )}</>
             )}
           </Col>
-          <Col ></Col>
+
           <Col ></Col>
         </Row>
         </Container>
