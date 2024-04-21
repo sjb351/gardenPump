@@ -3,7 +3,7 @@
     {
         "dataBaseName":"pump_1",
         "filePath" :"data/data.db",
-        "url":null,
+        "url": null,
         "port":8700
     },
       "mqtt": {

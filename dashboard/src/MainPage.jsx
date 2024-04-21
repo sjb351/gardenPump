@@ -20,7 +20,9 @@ function MainPage({ config}) {
   let [error, setError] = useState("")
   let [data, setData] = useState(null)
   let [dataRecieved, setDataRecieved] = useState(false)
-  const backendPump = "http://" +config.sqlite3.url+ ":" + config.sqlite3.port +"/get"
+  let url = (config.sqlite3.url ? config.sqlite3.url: window.location.hostname) +  ":" + config.sqlite3.port
+      
+  const backendPump = "http://" +url+"/get"
   const id = 1
   useEffect(() => {
     fetchDate()
@@ -37,6 +39,7 @@ function MainPage({ config}) {
 
 
   const fetchDate = async () => {
+    try{
       const res = await axios.get(backendPump)
       if (res.data != null){
         setData(res.data[0])
@@ -50,6 +53,9 @@ function MainPage({ config}) {
           setError("Conected but no data")
         }
      } 
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   useEffect(() => {
